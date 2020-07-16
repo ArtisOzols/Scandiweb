@@ -1,0 +1,381 @@
+@import url("https://fonts.googleapis.com/css2?family=MuseoModerno:wght@400&display=swap");
+.d-flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.btn {
+  background-color: #141939;
+  border-color: #08dbb6;
+  border-radius: 10%;
+  padding: 10px 20px;
+  color: #08dbb6;
+  font-size: 15px;
+  text-decoration: none;
+  text-transform: uppercase;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+.btn:hover {
+  color: #ededed;
+  -webkit-box-shadow: 0 0 5px #08dbb6, 0 0 25px #08dbb6;
+          box-shadow: 0 0 5px #08dbb6, 0 0 25px #08dbb6;
+}
+
+.links {
+  font-family: 'MuseoModerno', cursive;
+  color: #141939;
+  font-size: 1.3em;
+  text-decoration: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  margin: 40px 0;
+  margin-right: 20%;
+  background-color: transparent;
+  border: none;
+}
+
+.links:hover {
+  text-shadow: 0.5px 0px 0px #141939;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Work Sans', sans-serif;
+  color: #08dbb6;
+  letter-spacing: .8px;
+  height: 100%;
+  background-color: #ededed;
+}
+
+body input::-webkit-outer-spin-button,
+body input::-webkit-inner-spin-button,
+body input::-webkit-outer-spin-button:hover,
+body input::-webkit-inner-spin-button:hover {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+header h1 {
+  font-family: 'MuseoModerno', cursive;
+  text-transform: uppercase;
+  color: #141939;
+  font-size: 2.7em;
+  text-align: center;
+  padding: 8px 0;
+}
+
+main .row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: 90%;
+  margin: 0 auto;
+}
+
+main .product {
+  overflow: hidden;
+  height: 220px;
+  width: 180px;
+  margin: 20px 1.1%;
+  line-height: .3em;
+  font-size: .8em;
+  border: 2px solid #141939;
+  border-top-left-radius: 20%;
+  border-top-right-radius: 20%;
+}
+
+@media (min-width: 750px) {
+  main .product {
+    height: 230px;
+    width: 230px;
+    font-size: .8em;
+  }
+}
+
+main div.product:hover .title-box {
+  -webkit-box-shadow: inset 0px 25px 47px -38px #141939;
+          box-shadow: inset 0px 25px 47px -38px #141939;
+}
+
+main .title-box {
+  background-color: #ededed;
+  border-top-left-radius: 20%;
+  border-top-right-radius: 20%;
+  height: 50%;
+  padding: 0 5%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+main .title {
+  color: #141939;
+  font-size: 1.3em;
+  text-align: center;
+  margin: 0;
+  word-wrap: break-word;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-height: 3.9em;
+  line-height: 1.3em;
+}
+
+main .description-box {
+  position: relative;
+  background-color: #141939;
+  height: 50%;
+  padding: 5px 5%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+main .price {
+  text-align: center;
+  color: #ededed;
+  font-size: 1.4em;
+}
+
+main form[action="delete"] input[type="checkbox"] {
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  width: 40px;
+  height: 40px;
+  display: none;
+}
+
+main form[action="delete"] input + label {
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+}
+
+main form[action="delete"] input + label > svg {
+  width: 40px;
+  height: 40px;
+}
+
+main form[action="delete"] label > svg > polygon {
+  fill: #d4d4d4;
+}
+
+main form[action="delete"] input:hover + label > svg > polygon {
+  fill: #ededed;
+}
+
+main form[action="delete"] input:checked + label > svg > polygon {
+  fill: #08dbb6;
+}
+
+main form[action="delete"] input[type="submit"] {
+  float: right;
+  font-size: 1.5em;
+  margin-right: 10%;
+}
+
+main form[action="add"] {
+  background-color: #141939;
+  -webkit-box-shadow: 0px 0px 20px .5px #1b214b;
+          box-shadow: 0px 0px 20px .5px #1b214b;
+  border-radius: 4%;
+  margin: 0 5% 20px 5%;
+  padding: 20px 8% 30px 8%;
+  color: #08dbb6;
+}
+
+@media (min-width: 750px) {
+  main form[action="add"] {
+    margin: 0 auto;
+    padding: 20px 5% 30px 5%;
+    width: 40%;
+  }
+}
+
+main .radio-btn {
+  padding: 6px;
+  margin: 3px 0 0 4px;
+  background: #ededed;
+  border-radius: 50%;
+  -webkit-box-shadow: 0px 0px 5px 0.8px #08dbb6;
+          box-shadow: 0px 0px 5px 0.8px #08dbb6;
+  position: absolute;
+  left: -25px;
+}
+
+main input[type="radio"] ~ label {
+  position: relative;
+  -webkit-transition: font-size .5s;
+  transition: font-size .5s;
+  margin-right: 6%;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  font-size: 15px;
+}
+
+main input[type="radio"] {
+  -webkit-transform: translateX(50px) scaleX(12);
+          transform: translateX(50px) scaleX(12);
+  opacity: 0;
+  z-index: 10;
+  height: 50px;
+}
+
+main input[type="radio"]:checked + label > span.radio-btn {
+  background-color: #141939;
+}
+
+main input[type="radio"]:valid + label {
+  color: #ededed;
+  opacity: .8;
+  font-size: 12px;
+}
+
+main input[type="radio"]:checked + label {
+  color: #08dbb6;
+  opacity: 1;
+  font-size: 16px;
+}
+
+main .text-input {
+  position: relative;
+}
+
+main .text-input input {
+  width: 100%;
+  padding: 10px 0;
+  margin-bottom: 40px;
+  color: #08dbb6;
+  font-size: 15px;
+  border: none;
+  border-bottom: 1px solid #ededed;
+  outline: none;
+  background: transparent;
+}
+
+main .text-input label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 10px 0;
+  font-size: 15px;
+  color: #08dbb6;
+  pointer-events: none;
+  -webkit-transition: .5s;
+  transition: .5s;
+  text-transform: uppercase;
+}
+
+main .text-input input:focus ~ label, main .text-input input:valid ~ label {
+  top: -20px;
+  left: 0;
+  color: #ededed;
+  font-size: 12px;
+}
+
+main .text-input span {
+  position: absolute;
+  color: #08dbb6;
+  top: 10px;
+  font-size: 0px;
+  -webkit-transition: opacity .5s;
+  transition: opacity .5s;
+  opacity: 0;
+}
+
+main input[name="size"]:focus ~ span, main input[name="size"]:valid ~ span,
+main input[name="weight"]:focus ~ span, main input[name="weight"]:valid ~ span,
+main input[name="height"]:focus ~ span, main input[name="height"]:valid ~ span,
+main input[name="width"]:focus ~ span, main input[name="width"]:valid ~ span,
+main input[name="length"]:focus ~ span, main input[name="length"]:valid ~ span {
+  font-size: 14px;
+  opacity: 1;
+}
+
+main input[name="size"], main input[name="weight"], main input[name="height"], main input[name="width"], main input[name="length"] {
+  padding: 10px 0px 10px 30px;
+  width: 92%;
+}
+
+@media (min-width: 750px) {
+  main input[name="size"], main input[name="weight"], main input[name="height"], main input[name="width"], main input[name="length"] {
+    width: 95.5%;
+  }
+}
+
+main input[name="price"]:focus ~ span, main input[name="price"]:valid ~ span {
+  font-size: 15px;
+  opacity: 1;
+}
+
+main input[name="price"] {
+  padding: 10px 0px 10px 15px;
+  width: 96%;
+}
+
+@media (min-width: 750px) {
+  main input[name="price"] {
+    width: 98%;
+  }
+}
+
+main ::-webkit-input-placeholder {
+  text-align: center;
+  font-style: italic;
+}
+
+main :-ms-input-placeholder {
+  text-align: center;
+  font-style: italic;
+}
+
+main ::-ms-input-placeholder {
+  text-align: center;
+  font-style: italic;
+}
+
+main ::placeholder {
+  text-align: center;
+  font-style: italic;
+}
+
+main #specAttribute {
+  position: relative;
+  height: 0;
+  -webkit-transition: height .8s ease-out;
+  transition: height .8s ease-out;
+}
+
+main #size, main #weight, main #dimentions {
+  position: absolute;
+  height: 0;
+  opacity: 0;
+  overflow: hidden;
+  -webkit-transition: opacity 2s;
+  transition: opacity 2s;
+}
+/*# sourceMappingURL=styles.css.map */

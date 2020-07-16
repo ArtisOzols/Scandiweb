@@ -1,0 +1,326 @@
+@import url('https://fonts.googleapis.com/css2?family=MuseoModerno:wght@400&display=swap');
+
+$colors: (
+     primary: #141939,
+     secondary: #ededed,
+     text-blue: #08dbb6,
+);
+@function color($color-name) {
+     @return map-get($colors, $color-name); 
+}
+
+$desktop: 750px;
+@mixin desktop {
+     @media (min-width: #{$desktop}) {
+          @content;
+     }
+}
+
+
+.d-flex {
+     display: flex;
+}
+
+.btn {
+     background-color: color(primary);
+     border-color: color(text-blue);
+     border-radius: 10%;
+     padding: 10px 20px;
+     color: color(text-blue);
+     font-size: 15px;
+     text-decoration: none;
+     text-transform: uppercase;
+     transition: .3s;
+}
+.btn:hover {
+color: color(secondary);
+box-shadow: 0 0 5px color(text-blue),
+            0 0 25px color(text-blue);
+}
+.links {
+     font-family: 'MuseoModerno', cursive;
+     color: color(primary); 
+     font-size: 1.3em;
+     text-decoration: none;
+     display: flex;
+     justify-content: flex-end;
+     margin: 40px 0;
+     margin-right: 20%;
+     background-color: transparent;
+     border: none;
+}
+.links:hover {
+     text-shadow: .5px 0px 0px color(primary);
+}
+
+body {
+     margin: 0;     
+     padding: 0;
+     font-family: 'Work Sans', sans-serif;
+     color: color(text-blue); 
+     letter-spacing: .8px;
+     height: 100%;
+     background-color: color(secondary);
+     
+     input::-webkit-outer-spin-button,
+     input::-webkit-inner-spin-button,
+     input::-webkit-outer-spin-button:hover,
+     input::-webkit-inner-spin-button:hover {
+          -webkit-appearance: none;
+          margin: 0;
+     }
+}
+
+header {
+     h1 {
+          font-family: 'MuseoModerno', cursive;
+          text-transform: uppercase;
+          color: color(primary); 
+          font-size: 2.7em;
+          text-align: center;
+          padding: 8px 0;
+     }
+}
+
+main {
+//list page
+     .row  {
+          display: flex;
+          flex-wrap: wrap;
+          width: 90%;
+          margin: 0 auto;
+     }
+     .product {
+          overflow: hidden;
+          height: 220px;
+          width: 180px; 
+          margin: 20px 1.1%;
+          line-height: .3em;
+          font-size: .8em;
+
+          border: 2px solid color(primary);
+          border-top-left-radius: 20%;
+          border-top-right-radius: 20%;
+          @include desktop {   
+               height: 230px;        
+               width: 230px;
+               font-size: .8em;
+          }
+     }
+
+     div.product:hover .title-box{
+               box-shadow: inset 0px 25px 47px -38px rgba(20,25,57,1);
+          }
+     
+     .title-box {
+          background-color: color(secondary);
+          border-top-left-radius: 20%;
+          border-top-right-radius: 20%;
+          height: 50%;
+          padding: 0 5%;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+
+     }
+     .title {
+          color: color(primary);
+          font-size: 1.3em;
+          text-align: center;
+          margin: 0;
+     //allows title to be no longer than 2 lines
+          word-wrap: break-word;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          max-height: 3.9em;
+          line-height: 1.3em;
+     }
+     .description-box {
+          position: relative;
+          background-color: color(primary);
+          height: 50%;
+          padding: 5px 5%;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+     }
+     .price {
+          text-align: center;
+          color: color(secondary);
+          font-size: 1.4em;
+     }
+     //checkboxes
+     form[action="delete"] input[type="checkbox"] {
+          position: absolute;
+          bottom: 0px;
+          right: 0px;
+          width: 40px;
+          height: 40px;
+          display: none;
+     }
+     form[action="delete"] input+label {
+          position: absolute;
+          bottom: 0px;
+          right: 0px;
+     }
+     form[action="delete"] input+label>svg {
+          width: 40px;
+          height: 40px;
+     }
+     form[action="delete"] label>svg>polygon {
+          fill: darken(color(secondary), 10%); 
+     }
+     form[action="delete"] input:hover+label>svg>polygon {
+          fill: color(secondary); 
+     }
+     form[action="delete"] input:checked+label>svg>polygon {
+          fill: color(text-blue); 
+     }
+     form[action="delete"] input[type="submit"] {
+          float: right;
+          font-size: 1.5em;
+          margin-right: 10%;
+     }
+     
+//new page
+     form[action="add"] {
+          background-color: color(primary);
+          box-shadow: 0px 0px 20px .5px #1b214b;
+          border-radius: 4%;
+          margin: 0 5% 20px 5%;
+          padding: 20px 8% 30px 8%;
+          color: color(text-blue);
+          @include desktop {
+               margin: 0 auto;
+               padding: 20px 5% 30px 5%;
+               width: 40%; 
+          }
+     }
+
+     // radio buttons
+     .radio-btn {
+          padding: 6px;
+          margin: 3px 0 0 4px;
+          background: color(secondary);
+          border-radius: 50%;
+          box-shadow: 0px 0px 5px .8px color(text-blue);
+          position: absolute;
+          left: -25px;
+     }
+     input[type="radio"]~label {
+          position: relative;
+          transition: font-size .5s;
+          margin-right: 6%;
+          margin-bottom: 30px;          
+          text-transform: uppercase;
+          font-size: 15px;
+     }
+     input[type="radio"] {
+          transform: translateX(50px) scaleX(12);
+          opacity: 0;
+          z-index: 10;
+          height: 50px;
+     }
+     input[type="radio"]:checked +label>span.radio-btn {
+          background-color: color(primary);
+     }
+     input[type="radio"]:valid +label {
+          color: color(secondary);
+          opacity: .8;
+          font-size: 12px;
+     }
+     input[type="radio"]:checked +label {
+          color: color(text-blue);
+          opacity: 1;
+          font-size: 16px;
+     }
+
+     // Text input fields
+     .text-input {
+          position: relative;
+     }
+     .text-input input {
+          width: 100%;
+          padding: 10px 0;
+          margin-bottom: 40px;
+          color: color(text-blue);
+          font-size: 15px;
+          border: none;
+          border-bottom: 1px solid color(secondary);
+          outline: none;
+          background: transparent;
+     }
+     .text-input label {
+          position: absolute;
+          top: 0;
+          left: 0;
+          padding: 10px 0;
+          font-size: 15px;
+          color: color(text-blue);
+          pointer-events: none;
+          transition: .5s;
+          text-transform: uppercase;
+     }
+     .text-input input:focus ~ label, .text-input input:valid ~ label {
+          top: -20px;
+          left: 0;
+          color: color(secondary);
+          font-size: 12px;
+     }
+
+     // Units of measurements
+     .text-input span {
+          position: absolute;
+          color: color(text-blue);
+          top: 10px;  
+          font-size: 0px;
+          transition: opacity .5s;
+          opacity: 0;
+     }
+     
+     input[name="size"]:focus ~ span, input[name="size"]:valid ~ span,
+     input[name="weight"]:focus ~ span, input[name="weight"]:valid ~ span,
+     input[name="height"]:focus ~ span, input[name="height"]:valid ~ span,
+     input[name="width"]:focus ~ span, input[name="width"]:valid ~ span,
+     input[name="length"]:focus ~ span, input[name="length"]:valid ~ span {
+          font-size: 14px;
+          opacity: 1;
+     }
+     input[name="size"], input[name="weight"], input[name="height"], input[name="width"], input[name="length"] {
+          padding: 10px 0px 10px 30px;
+          width: 92%;
+          @include desktop {
+               width: 95.5%; 
+          }
+     }
+     input[name="price"]:focus ~ span, input[name="price"]:valid ~ span {
+          font-size: 15px;
+          opacity: 1;
+     }
+     input[name="price"] {
+          padding: 10px 0px 10px 15px;
+          width: 96%;
+          @include desktop {
+               width: 98%; 
+          }
+     }
+
+     ::placeholder {
+          text-align: center;
+          font-style: italic;
+     }
+        
+     // Special attribute
+     #specAttribute {
+          position: relative;
+          height: 0;
+          transition:  height .8s ease-out;
+     }
+     #size, #weight, #dimentions {
+          position: absolute;
+          height: 0;
+          opacity: 0;
+          overflow: hidden;
+          transition:  opacity 2s;   
+     } 
+}
