@@ -1,3 +1,5 @@
+Website for vacancy in Scandiweb
+
 Pleace these files on local server and in index.php and classes/Database.php specify your database server information
 (by default it is: server name - "localhost", username - "root" and password - "").
 
